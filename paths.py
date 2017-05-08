@@ -31,8 +31,18 @@ class Paths:
         :return: 
         """
         if not Path(directory).exists():
-            print(f'DIR-Create {directory}')
             os.mkdir(directory)
+
+    @staticmethod
+    def mkdir_ifnexist_bypath(path):
+        """
+        Mkdir using path
+        :param path: 
+        :return: 
+        """
+        filename = os.path.basename(path)
+        directory = str(Path(path))
+        Paths.mkdir_ifnexist(directory.replace(filename, ''))
 
     def create_dependencies(self):
         """
