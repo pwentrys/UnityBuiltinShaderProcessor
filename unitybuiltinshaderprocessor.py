@@ -1,7 +1,9 @@
 import os
 from pathlib import Path
 
-from models.filebase import FILEBASE
+import enums.exts as ext_enum
+from enums.exts import EXTENSIONS
+# from models.filebase import FILEBASE
 from paths import Paths
 
 # from datetime import datetime
@@ -14,7 +16,10 @@ paths = Paths(__file__)
 
 source = paths.source
 target = Path(str(paths.target) + r'\\')
-files = []
+files = {}
+
+for EXTENSION in EXTENSIONS:
+    files[EXTENSION] = []
 
 for root, dirnames, filenames in os.walk(str(source)):
     root_target = str(root).replace('\\source\\', '\\target\\')
@@ -24,10 +29,13 @@ for root, dirnames, filenames in os.walk(str(source)):
     # for dirname in dirnames:
     #    print(f'--- Dir: {root}\\{dirname}')
     for filename in filenames:
-        files.append(FILEBASE(filename))
+        file = Path(f'{root}\\{filename}')
+        files[ext_enum.get_type_from_path(file)].append(file)
         # print(f'--- FileName: {root}\\{filename}')
 
-# print(target)
 
-for file in files:
-    file.__log__()
+# for filearray in files:
+#    print(f'------------ {filearray} ({len(files[filearray])})- START ------------')
+#    for file in files[filearray]:
+#        print(f'--- {file}')
+#    print(f'------------ {filearray} - END ------------\n\n')
