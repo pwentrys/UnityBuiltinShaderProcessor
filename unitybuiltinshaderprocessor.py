@@ -1,4 +1,4 @@
-from config import Paths
+from paths import Paths
 
 # from datetime import datetime
 
