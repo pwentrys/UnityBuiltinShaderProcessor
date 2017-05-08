@@ -18,8 +18,8 @@ class Paths:
         self.file = os.path.basename(self.path)
         self.dirOS = str(Path(self.path))
         self.dirOS = self.dirOS.replace(self.file, '')
-        self.source = f'{self.dirOS}source'
-        self.target = f'{self.dirOS}target'
+        self.source = Path(f'{self.dirOS}source')
+        self.target = Path(f'{self.dirOS}target')
         self.log = Path(f'{self.pathOS}.log')
         self.create_dependencies()
 
@@ -31,7 +31,7 @@ class Paths:
         :return: 
         """
         if not Path(directory).exists():
-            print(f'creating {directory}')
+            print(f'DIR-Create {directory}')
             os.mkdir(directory)
 
     def create_dependencies(self):

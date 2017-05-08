@@ -1,13 +1,4 @@
 # TODO Add Functionality
-# File extensions we care about.
-EXTENSIONS = [
-    'cginc',
-    'cs',
-    'glslinc',
-    'shader',
-]
-
-# TODO Add Functionality
 # Location in Unity's AssetDatabase.
 # ex: /Assets/Shaders
 ADB_LOCATION = '/Assets/Shaders'
@@ -23,3 +14,7 @@ HIDDEN_EXPOSED = False
 # TODO Add Functionality
 # Force lowercase file names?
 FILENAME_LOWERCASE = False
+
+# TODO Add Functionality
+# Allow auto overwrite in target folder
+TARGET_OVERWRITE = True
