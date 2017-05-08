@@ -1,5 +1,5 @@
 # UnityBuiltinShaderProcessor
-Automation of repetitive tasks done each time new Unity version comes out.
+Automation of repetitive tasks done on Builtin Shader resources to make life easier.
 
 # Python Requirements (See requirements.txt)
 Built on Python 3.6.1
