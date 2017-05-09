@@ -1,7 +1,7 @@
 # TODO Add Functionality
 # Location in Unity's AssetDatabase.
-# ex: /Assets/Shaders
-ADB_LOCATION = '/Assets/Shaders'
+# ex: /Assets/Shaders/
+ADB_LOCATION = 'Assets/Shaders/'
 
 # TODO Add Functionality
 # Prefix all files will receive.
