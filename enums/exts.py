@@ -2,7 +2,7 @@ from enum import Enum
 from os.path import splitext
 
 
-# TODO Add Functionality
+# TODO Improve Functionality
 # File extensions we care about.
 class EXTENSIONS(Enum):
     CGINC = 1
