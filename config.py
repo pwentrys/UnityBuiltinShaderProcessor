@@ -18,3 +18,5 @@ FILENAME_LOWERCASE = False
 # TODO Add Functionality
 # Allow auto overwrite in target folder
 TARGET_OVERWRITE = True
+
+UNITY_TEST_PROJECT_INCLUDED = True

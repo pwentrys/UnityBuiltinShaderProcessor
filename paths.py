@@ -2,6 +2,8 @@ import os
 from os.path import realpath, splitext
 from pathlib import Path
 
+from config import UNITY_TEST_PROJECT_INCLUDED
+
 
 # DO NOT TOUCH
 class Paths:
@@ -20,6 +22,9 @@ class Paths:
         self.dirOS = self.dirOS.replace(self.file, '')
         self.source = Path(f'{self.dirOS}source')
         self.target = Path(f'{self.dirOS}target')
+        self.unity = Path(f'{self.dirOS}unity')
+        self.unityAssets = Path(f'{self.unity}\\Assets')
+        self.unityAssetsShaders = Path(f'{self.unityAssets}\\Shaders')
         self.log = Path(f'{self.pathOS}.log')
         self.create_dependencies()
 
@@ -51,6 +56,10 @@ class Paths:
         """
         self.mkdir_ifnexist(self.source)
         self.mkdir_ifnexist(self.target)
+        if UNITY_TEST_PROJECT_INCLUDED:
+            self.mkdir_ifnexist(self.unity)
+            self.mkdir_ifnexist(self.unityAssets)
+            self.mkdir_ifnexist(self.unityAssetsShaders)
 
     def __log__(self):
         """
@@ -65,6 +74,9 @@ class Paths:
             f'DirOS: {self.dirOS}\n'
             f'Source: {self.source}\n'
             f'Target: {self.target}\n'
+            f'Unity: {self.unity}\n'
+            f'UnityAssets: {self.unityAssets}\n'
+            f'UnityAssetsShaders: {self.unityAssetsShaders}\n'
             f'Log: {self.log}\n'
             f'\n{self.log_long}# PATHS - END\n{self.log_long}\n'
         )
