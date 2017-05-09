@@ -1,7 +1,8 @@
 # TODO Add Functionality
 # Location in Unity's AssetDatabase.
 # ex: /Assets/Shaders/
-ADB_LOCATION = 'Assets/Shaders/'
+ADB_LOCATION = "Assets/Shaders/"
+ADB_CGINCLUDES_LOCATION = ADB_LOCATION + 'CGIncludes/'
 
 # TODO Add Functionality
 # Prefix all files will receive.
@@ -20,3 +21,6 @@ FILENAME_LOWERCASE = False
 TARGET_OVERWRITE = True
 
 UNITY_TEST_PROJECT_INCLUDED = True
+
+# Do not touch file list
+FILENAME_BLACKLIST = ['UnityCG.cginc', 'UnityCG.glslinc', 'UnityShaderVariables.cginc', 'UnityShaderUtilities.cginc']

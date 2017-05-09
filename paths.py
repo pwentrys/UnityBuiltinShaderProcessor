@@ -36,7 +36,15 @@ class Paths:
         :return: 
         """
         if not Path(directory).exists():
-            os.mkdir(directory)
+            try:
+                # TODO ...Totally no way this could ever go wrong /s
+                parent = Path(os.path.normpath(f'{str(directory)}\\..\\'))
+                if not parent.exists():
+                    parent.mkdir()
+
+                os.mkdir(directory)
+            except Exception as e:
+                print(e)
 
     @staticmethod
     def mkdir_ifnexist_bypath(path):
